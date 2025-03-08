@@ -17,16 +17,13 @@ echo "現在時刻は、". date("Y年m月d日"). " ". date("h時m分s秒"). "で
 
 // Q4 条件分岐-1 if文
 $device = "windows";
-if ($device === "windows") {
-    echo "使用OSは、windowsです。";
+if ($device === "windows" || $device === "mac") {
+    echo "使用OSは、". $device. "です。";
     
 } else {
-    if ($device === "mac") {
-        echo "使用のOSは、macです。";
-    }
-    
-    echo "どちらでもありません。";
+  echo "どちらでもありません。";
 }
+    
 
 
 // Q5 条件分岐-2 三項演算子
@@ -58,13 +55,15 @@ foreach ($kanto as $city) {
 
 
 // Q8 連想配列-2
-if (isset($kanto["埼玉県"])) {
-  echo "埼玉県の県庁所在地は". $kanto["埼玉県"]."です。";
+foreach ($kanto as $ken => $capital) {
+  if ($ken === "埼玉県") {
+    echo "埼玉県の県庁所在地は". $capital. "です。";
+  }
 }
 
 
 // Q9 連想配列-3
-$kanto["北海道"] = "札幌市"; 
+$kanto["北海道"] = "札幌市";
 $kanto["沖縄"] = "那覇市";
 
 $kanto_list =

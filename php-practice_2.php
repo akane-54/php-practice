@@ -69,16 +69,12 @@ $yamada->attend("PHP");
 // --問題1
 date_default_timezone_set("Asia/Tokyo");
 $date = new DateTime();
-$date->modify("-1 month");
-echo $date->format("Y-m-d"). PHP_EOL;
+echo $date->modify("-1 month")->format("Y-m-d");
 
 // --問題2
 date_default_timezone_set("Asia/Tokyo");
 $today = new DateTime();
 $pastDate = new DateTime("1992-4-25");
-$diff = $today->diff($pastDate);
 
-echo "あの日から". $diff->days. "日経過しました。"
-
-
+echo "あの日から". $today->diff($pastDate)->days. "日経過しました。"
 ?>
